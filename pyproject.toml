@@ -1,18 +1,18 @@
 [project]
-name = "shesha-secrets"
+name = "shesh-secrets"
 version = "0.1.0"
-description = "Shesha Brain: secret resolution from env/gopass/keepassxc/file"
+description = "Shesh Brain: secret resolution from env/gopass/keepassxc/file"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "GPL-3.0-or-later" }
 authors = [{ name = "Gagan Jain" }]
-dependencies = ["mcp[cli]>=1.0", "fastmcp>=0.1", "shesha-audit>=0.1"]
+dependencies = ["mcp[cli]>=1.0", "fastmcp>=0.1", "shesh-audit>=0.1"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.6"]
 
 [project.scripts]
-shesha-secrets-mcp = "shesha_secrets.server:main"
+shesh-secrets-mcp = "shesh_secrets.server:main"
 
 [tool.ruff]
 line-length = 100

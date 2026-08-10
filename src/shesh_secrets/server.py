@@ -5,7 +5,7 @@ from . import is_secret_reference, resolve
 
 try:
     from mcp.server.fastmcp import FastMCP
-    mcp = FastMCP("shesha-secrets")
+    mcp = FastMCP("shesh-secrets")
 except Exception:  # pragma: no cover
     mcp = None
 
