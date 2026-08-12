@@ -6,7 +6,7 @@ from . import is_secret_reference, resolve
 try:
     from fastmcp import FastMCP
     mcp = FastMCP("shesh-secrets")
-except Exception:  # pragma: no cover
+except ImportError:  # pragma: no cover — MCP wrapper is optional; resolve() still works
     mcp = None
 
 
