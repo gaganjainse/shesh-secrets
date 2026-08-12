@@ -4,7 +4,7 @@ from __future__ import annotations
 from . import is_secret_reference, resolve
 
 try:
-    from mcp.server.fastmcp import FastMCP
+    from fastmcp import FastMCP
     mcp = FastMCP("shesh-secrets")
 except Exception:  # pragma: no cover
     mcp = None
