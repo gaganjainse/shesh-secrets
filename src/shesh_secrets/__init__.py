@@ -16,8 +16,8 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 Resolver = Callable[[str], str | None]
 
