@@ -1,26 +1,35 @@
->  **Consolidated into [shesh-core](https://github.com/gaganjainse/shesh-core)** — this module now lives in the shesh-core monorepo (same package name, same console script). Archived 2026-08-13.
-
 # shesh-secrets
 
-Resolve secrets from **env**, **gopass**, **KeePassXC** (secret-service), or
-**0600 files** — secrets are never stored in MCP config. Reference format:
-`env:VAR`, `gopass:path`, `keepassxc:attr=value`, `file:/path`.
+> **Superseded by [shesh-core](https://github.com/gaganjainse/shesh-core).**
+> This repository is a tombstone: its history is preserved, its source is not.
 
-- License: GPL-3.0
-- Layer: Brain
-- Part of: [Shesh ecosystem](https://github.com/gaganjainse/shesh-ecosystem)
+## What happened
 
-## MCP tools
+[ADR-0019](https://github.com/gaganjainse/shesh-docs/blob/main/src/governance/adr/0019-shesh-core-monorepo.md)
+consolidated the single-module services into one repository. A module of a few
+hundred lines is not a service: each one carried its own build configuration,
+pipeline, and security policy, and those drifted apart from each other.
 
-`get_secret(reference)`, `resolve_config(mapping)`
+The code now lives in `shesh-core` as the `shesh_secrets` package, with
+the same import path and the same console script.
 
-## Develop
+## Why the source was removed
+
+Two copies of the same module drift. Keeping the code here meant a reader could
+find it, edit it, and have the change silently ignored by everything that
+actually runs.
+
+The history remains in this repository's git log. Nothing was lost.
+
+## Installing
 
 ```bash
-uv run pytest -q && uv run ruff check . && uv run shesh-secrets-mcp
+pipx install git+https://github.com/gaganjainse/shesh-core.git
 ```
 
-## Security
+Console script names are unchanged, so existing client configuration keeps
+working.
 
-Security posture and vulnerability reporting: [canonical ecosystem security
-policy](https://github.com/gaganjainse/shesh-ecosystem/blob/main/SECURITY.md).
+## Licence
+
+GPL-3.0-or-later.
